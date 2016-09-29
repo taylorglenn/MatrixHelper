@@ -10,7 +10,7 @@ namespace MatrixHelper
     public class LinearMatrix
     {
         private double[][] _matrix;
-        private List<double[][]> _stack = new List<double[][]>();
+        private Stack<double[][]> linearMatrixStack = new Stack<double[][]>();
         public int _rows { get; set; }
         public int _columns { get; set; }
 
@@ -26,21 +26,13 @@ namespace MatrixHelper
         }
         private void pushToStack(double[][] jaggedArray)
         {
-            _stack.Add(_matrix);
-        }
-        private void popFromStack()
-        {
-            if (_stack.Count > 1)
-            {
-                _stack.Remove(_stack.Last());
-            }
+            linearMatrixStack.Push(jaggedArray);
         }
         public void Undo()
         {
-            popFromStack();
-            if (_stack.Count > 0)
+            if (linearMatrixStack.Count > 1)
             {
-                _matrix = _stack.Last();
+                _matrix = linearMatrixStack.Pop();
             }
         }
         public void EraseAllRows()
@@ -52,7 +44,7 @@ namespace MatrixHelper
                     _matrix[i][j] = 0;
                 }
             }
-            _stack.Add(_matrix);
+            linearMatrixStack.Push(_matrix);
         }
         public void SetRow(int rowIndex, double[] value)
         {
@@ -91,7 +83,7 @@ namespace MatrixHelper
                     _matrix[row][column] = jaggedMatrix[row][column];
                 }
             }
-            _stack.Add(_matrix);
+            linearMatrixStack.Push(_matrix);
         }
         public double[] ReturnMultipleOfRow(int rowIndex, double multiple)
         {
@@ -108,7 +100,7 @@ namespace MatrixHelper
             {
                 _matrix[rowIndex][i] *= multiple;
             }
-            _stack.Add(_matrix);
+            linearMatrixStack.Push(_matrix);
         }
         public double[] ReturnSumOfRows(int rowIndex1, int rowIndex2)
         {
@@ -128,7 +120,7 @@ namespace MatrixHelper
                 tempArray[i] = sum;
             }
             _matrix[rowReplaceIndex] = tempArray;
-            _stack.Add(_matrix);
+            linearMatrixStack.Push(_matrix);
         }
         public void SwitchRows(int rowIndex1, int rowIndex2)
         {
@@ -136,8 +128,9 @@ namespace MatrixHelper
             holdingRow = _matrix[rowIndex1];
             _matrix[rowIndex1] = _matrix[rowIndex2];
             _matrix[rowIndex2] = holdingRow;
-            _stack.Add(_matrix);
+            linearMatrixStack.Push(_matrix);
         }
+        //I'm not really using the below two methods right now.  I may use them later.  Don't delete for now.
         public void SaveMatrixToFile(string fileDirectory, string fileName)
         {
             string directoryString = Path.GetFullPath(fileDirectory);
@@ -171,6 +164,5 @@ namespace MatrixHelper
                 //todo: load file at path and put last matrix into _matrix
             }
         }
-        
     }
 }
