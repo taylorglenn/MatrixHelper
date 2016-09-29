@@ -1,0 +1,12 @@
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\bin\Debug\MatrixHelperGUI.exe.config
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\bin\Debug\MatrixHelperGUI.exe
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\bin\Debug\MatrixHelperGUI.pdb
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.Properties.Resources.resources
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.csproj.GenerateResource.Cache
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.exe
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.pdb
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.LinearMatrixGUI.resources
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\bin\Debug\MatrixHelper.dll
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\bin\Debug\MatrixHelper.pdb
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.csprojResolveAssemblyReference.cache
+C:\Users\Taylor\Documents\Visual Studio 2015\Projects\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.CreateMatrixGUI.resources

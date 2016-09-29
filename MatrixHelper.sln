@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixHelper", "MatrixHelper\MatrixHelper.csproj", "{0E9861E6-6E65-4EE4-B3D7-20FBA77328D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixHelperTests", "MatrixHelperTests\MatrixHelperTests.csproj", "{095484A7-20ED-4C11-BA6D-38C0F9D73A9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixHelperGUI", "MatrixHelperGUI\MatrixHelperGUI.csproj", "{9FCE4578-7F14-470E-AB63-1C12596BBE83}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0E9861E6-6E65-4EE4-B3D7-20FBA77328D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E9861E6-6E65-4EE4-B3D7-20FBA77328D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E9861E6-6E65-4EE4-B3D7-20FBA77328D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E9861E6-6E65-4EE4-B3D7-20FBA77328D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{095484A7-20ED-4C11-BA6D-38C0F9D73A9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{095484A7-20ED-4C11-BA6D-38C0F9D73A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{095484A7-20ED-4C11-BA6D-38C0F9D73A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{095484A7-20ED-4C11-BA6D-38C0F9D73A9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FCE4578-7F14-470E-AB63-1C12596BBE83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FCE4578-7F14-470E-AB63-1C12596BBE83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FCE4578-7F14-470E-AB63-1C12596BBE83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FCE4578-7F14-470E-AB63-1C12596BBE83}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
