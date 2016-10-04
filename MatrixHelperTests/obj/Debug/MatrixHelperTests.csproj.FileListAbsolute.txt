@@ -14,3 +14,19 @@ c:\users\taylor\documents\visual studio 2015\Projects\MatrixHelper\MatrixHelperT
 c:\users\taylor\documents\visual studio 2015\Projects\MatrixHelper\MatrixHelperTests\obj\Debug\MatrixHelperTests.csprojResolveAssemblyReference.cache
 c:\users\taylor\documents\visual studio 2015\Projects\MatrixHelper\MatrixHelperTests\obj\Debug\MatrixHelperTests.dll
 c:\users\taylor\documents\visual studio 2015\Projects\MatrixHelper\MatrixHelperTests\obj\Debug\MatrixHelperTests.pdb
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\MatrixHelperTests.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\MatrixHelperTests.pdb
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\MatrixHelper.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\Mono.Cecil.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\Mono.Cecil.Mdb.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\Mono.Cecil.Pdb.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\Mono.Cecil.Rocks.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\nunit.engine.api.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\nunit.engine.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\nunit.framework.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\NUnit3.TestAdapter.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\MatrixHelper.pdb
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\bin\Debug\nunit.framework.xml
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\obj\Debug\MatrixHelperTests.csprojResolveAssemblyReference.cache
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\obj\Debug\MatrixHelperTests.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperTests\obj\Debug\MatrixHelperTests.pdb

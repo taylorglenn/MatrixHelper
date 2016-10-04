@@ -52,15 +52,6 @@ namespace MatrixHelperTests
             }
         }
         [Test]
-        public void StackTest()
-        {
-            _testMatrix.SumRows(1, 0, 1);
-            double[][] test = _testMatrix.ReturnMatrix();
-            _testMatrix.MultiplyRow(1, 8);
-            _testMatrix.Undo();
-            Assert.AreEqual(test, _testMatrix.ReturnMatrix());
-        }
-        [Test]
         public void EraseAllRowsTest()
         {
             //Fill matrix with random data
@@ -143,7 +134,7 @@ namespace MatrixHelperTests
                 {
                     _testData[row][column] *= multiple;
                 }
-                double[] testRow = _testMatrix.ReturnMultipleOfRow(row, multiple);
+                double[] testRow = _testMatrix.GetMultipleOfRow(row, multiple);
                 Assert.AreEqual(_testData[row], testRow);
                 _testMatrix.MultiplyRow(row, multiple);
                 Assert.AreEqual(_testData[row], _testMatrix.ReturnRow(row));
@@ -159,7 +150,7 @@ namespace MatrixHelperTests
             {
                 testRow[i] = _testData[0][i] + _testData[1][i];
             }
-            Assert.AreEqual(testRow, _testMatrix.ReturnSumOfRows(0, 1));
+            Assert.AreEqual(testRow, _testMatrix.GetSumOfRows(0, 1));
             _testMatrix.SumRows(0, 1, 1);
             Assert.AreEqual(testRow, _testMatrix.ReturnRow(1));
         }

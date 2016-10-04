@@ -1,16 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace MatrixHelper
 {
     public class LinearMatrix
     {
-        private double[][] _matrix;
-        private Stack<double[][]> linearMatrixStack = new Stack<double[][]>();
+        private double[][] _matrix { get; set; }
         public int _rows { get; set; }
         public int _columns { get; set; }
 
@@ -24,17 +19,6 @@ namespace MatrixHelper
             _rows = rows;
             _columns = columns;
         }
-        private void pushToStack(double[][] jaggedArray)
-        {
-            linearMatrixStack.Push(jaggedArray);
-        }
-        public void Undo()
-        {
-            if (linearMatrixStack.Count > 1)
-            {
-                _matrix = linearMatrixStack.Pop();
-            }
-        }
         public void EraseAllRows()
         {
             for(int i = 0; i < _matrix.Length; i++)
@@ -44,7 +28,6 @@ namespace MatrixHelper
                     _matrix[i][j] = 0;
                 }
             }
-            linearMatrixStack.Push(_matrix);
         }
         public void SetRow(int rowIndex, double[] value)
         {
@@ -83,9 +66,8 @@ namespace MatrixHelper
                     _matrix[row][column] = jaggedMatrix[row][column];
                 }
             }
-            linearMatrixStack.Push(_matrix);
         }
-        public double[] ReturnMultipleOfRow(int rowIndex, double multiple)
+        public double[] GetMultipleOfRow(int rowIndex, double multiple)
         {
             double[] output = new double[_matrix[rowIndex].Length];
             for(int i = 0; i < _matrix[rowIndex].Length; i++)
@@ -100,9 +82,8 @@ namespace MatrixHelper
             {
                 _matrix[rowIndex][i] *= multiple;
             }
-            linearMatrixStack.Push(_matrix);
         }
-        public double[] ReturnSumOfRows(int rowIndex1, int rowIndex2)
+        public double[] GetSumOfRows(int rowIndex1, int rowIndex2)
         {
             double[] output = new double[_matrix[rowIndex1].Length]; //All rows will always have same length
             for(int i = 0; i < _matrix[rowIndex1].Length; i++)
@@ -120,7 +101,6 @@ namespace MatrixHelper
                 tempArray[i] = sum;
             }
             _matrix[rowReplaceIndex] = tempArray;
-            linearMatrixStack.Push(_matrix);
         }
         public void SwitchRows(int rowIndex1, int rowIndex2)
         {
@@ -128,7 +108,10 @@ namespace MatrixHelper
             holdingRow = _matrix[rowIndex1];
             _matrix[rowIndex1] = _matrix[rowIndex2];
             _matrix[rowIndex2] = holdingRow;
-            linearMatrixStack.Push(_matrix);
+        }
+        public double[][] ToJaggedArray()
+        {
+            return _matrix;
         }
         //I'm not really using the below two methods right now.  I may use them later.  Don't delete for now.
         public void SaveMatrixToFile(string fileDirectory, string fileName)

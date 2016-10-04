@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MatrixHelper;
 
@@ -13,14 +7,15 @@ namespace MatrixHelperGUI
 {
     public partial class LinearMatrixGUI : Form
     {
-        LinearMatrix _matrix;
+        public LinearMatrix _matrix;
+        public Stack<LinearMatrix> _stack = new Stack<LinearMatrix>();
         public LinearMatrixGUI()
         {
             InitializeComponent();
         }
         private void LinearMatrixGUI_Load(object sender, EventArgs e)
         {
-            lblMatrixDisplay.Text = "To create a matrix, \nplease click on \nthe \"Create Matrix\" button";
+            lblMatrixDisplay.Text = "To create a matrix, \nplease click on \nthe \"Create New Matrix\" button";
             grpMatrixControls.Enabled = false;
             grpMatrixOperands.Enabled = false;
         }
@@ -57,7 +52,9 @@ namespace MatrixHelperGUI
                     ShowOriginalMatrix(_matrix);
                     UpdateLog("Created new matrix." + _matrix._rows.ToString() + " x " + _matrix._columns.ToString());
                 }
-            } 
+            }
+            _stack.Clear();
+            PushMatrixToStack(_matrix);
         }
         private void UpdateLog(string logMessage)
         {
@@ -100,12 +97,26 @@ namespace MatrixHelperGUI
                 _matrix.SumRows(rowIndex1, rowIndex2, rowReplace);
                 UpdateLog("R" + cboResultantRow.Text + ": R" + cboRow1.Text + " + R" + cboRow2.Text);
             }
+            PushMatrixToStack(_matrix);
             PrintMatrixToLabel(_matrix, lblMatrixDisplay);
         }
         private void btnMultiplyRow_Click(object sender, EventArgs e)
         {
-            _matrix.MultiplyRow(Convert.ToInt32(cboRow1.Text), Convert.ToDouble(txtFactor.Text));
-            UpdateLog("R" + cboRow1.Text + ": " + txtFactor.Text + cboRow1.Text);
+            double factor;
+            string factorText = txtFactor.Text.Replace('\\', '/'); //Just in case the wrong slash is used
+            if (factorText.Contains("/"))
+            {
+                double n = Convert.ToDouble(factorText.Substring(0, factorText.IndexOf('/')));
+                double d = Convert.ToDouble(factorText.Substring(factorText.IndexOf('/') + 1));
+                factor = n / d;
+            }
+            else
+            {
+                factor = Convert.ToDouble(factorText);
+            }
+            _matrix.MultiplyRow(Convert.ToInt32(cboRow1.Text) - 1, factor);
+            PushMatrixToStack(_matrix);
+            UpdateLog("R" + cboRow1.Text + ": " + factorText + "R" + cboRow1.Text);
             PrintMatrixToLabel(_matrix, lblMatrixDisplay);
         }
         private void cboRow1_SelectedIndexChanged(object sender, EventArgs e)
@@ -116,34 +127,28 @@ namespace MatrixHelperGUI
         {
             UpdateResultantRowComboBox();
         }
-        private void btnMultiplyRows_Click(object sender, EventArgs e)
-        {
-            double factor;
-            string factorText = txtFactor.Text.Replace('\\', '/'); //Just in case the wrong slash is used
-            if (factorText.Contains("/"))
-            {
-                double n = Convert.ToDouble(factorText.Substring(0, factorText.IndexOf('/')));
-                double d = Convert.ToDouble(factorText.Substring(factorText.IndexOf('/') + 1));
-                factor = n / d;
-            } else
-            {
-                factor = Convert.ToDouble(factorText);
-            }
-            _matrix.MultiplyRow(Convert.ToInt32(cboRow1.Text) - 1, factor);
-            PrintMatrixToLabel(_matrix, lblMatrixDisplay);
-            UpdateLog("R" + cboRow1.Text + ": " + factorText + "R" + cboRow1.Text);
-        }
         private void btnSwapRows_Click(object sender, EventArgs e)
         {
             _matrix.SwitchRows(Convert.ToInt32(cboRow1.Text) - 1, Convert.ToInt32(cboRow2.Text) - 1);
             PrintMatrixToLabel(_matrix, lblMatrixDisplay);
             UpdateLog("R" + cboRow1.Text + " <---> R" + cboRow2.Text);
+            PushMatrixToStack(_matrix);
         }
         private void btnUndo_Click(object sender, EventArgs e)
         {
-            _matrix.Undo();
-            PrintMatrixToLabel(_matrix, lblMatrixDisplay);
-            UpdateLog("Undo last action.");
+            if(_stack.Count > 1)
+            {
+                _matrix =_stack.Pop();
+                _matrix.SetMatrix(_stack.Peek().ToJaggedArray());
+                PrintMatrixToLabel(_matrix, lblMatrixDisplay);
+                UpdateLog("Undo last action.");
+            }
+        }
+        private void PushMatrixToStack(LinearMatrix lm)
+        {
+            LinearMatrix stackMatrix = new LinearMatrix(lm._rows, lm._columns);
+            stackMatrix.SetMatrix(lm.ToJaggedArray());
+            _stack.Push(stackMatrix);
         }
     }
 }
