@@ -22,3 +22,4 @@ C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelpe
 C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.csproj.GenerateResource.Cache
 C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.exe
 C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.pdb
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelperGUI\obj\Debug\MatrixHelperGUI.GetDoubleGUI.resources
