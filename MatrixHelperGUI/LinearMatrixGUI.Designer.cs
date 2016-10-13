@@ -32,6 +32,7 @@
             this.grpMatrixControls = new System.Windows.Forms.GroupBox();
             this.btnUndo = new System.Windows.Forms.Button();
             this.btnSwapRows = new System.Windows.Forms.Button();
+            this.btnMultiplyRow = new System.Windows.Forms.Button();
             this.btnAddRows = new System.Windows.Forms.Button();
             this.libLog = new System.Windows.Forms.ListBox();
             this.lblLog = new System.Windows.Forms.Label();
@@ -49,7 +50,6 @@
             this.lblOriginalMatrix = new System.Windows.Forms.Label();
             this.lblOriginalMatrixDisplay = new System.Windows.Forms.Label();
             this.lblUpdateMatrix = new System.Windows.Forms.Label();
-            this.btnMultiplyRow = new System.Windows.Forms.Button();
             this.grpMatrixControls.SuspendLayout();
             this.grpMatrixOperands.SuspendLayout();
             this.SuspendLayout();
@@ -98,6 +98,16 @@
             this.btnSwapRows.UseVisualStyleBackColor = true;
             this.btnSwapRows.Click += new System.EventHandler(this.btnSwapRows_Click);
             // 
+            // btnMultiplyRow
+            // 
+            this.btnMultiplyRow.Location = new System.Drawing.Point(8, 66);
+            this.btnMultiplyRow.Name = "btnMultiplyRow";
+            this.btnMultiplyRow.Size = new System.Drawing.Size(142, 35);
+            this.btnMultiplyRow.TabIndex = 0;
+            this.btnMultiplyRow.Text = "Multiply Row";
+            this.btnMultiplyRow.UseVisualStyleBackColor = true;
+            this.btnMultiplyRow.Click += new System.EventHandler(this.btnAddRows_Click);
+            // 
             // btnAddRows
             // 
             this.btnAddRows.Location = new System.Drawing.Point(8, 25);
@@ -113,21 +123,19 @@
             this.libLog.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.libLog.FormattingEnabled = true;
             this.libLog.ItemHeight = 25;
-            this.libLog.Location = new System.Drawing.Point(1118, 35);
+            this.libLog.Location = new System.Drawing.Point(698, 29);
             this.libLog.Name = "libLog";
             this.libLog.Size = new System.Drawing.Size(297, 229);
             this.libLog.TabIndex = 8;
-            this.libLog.Visible = false;
             // 
             // lblLog
             // 
             this.lblLog.AutoSize = true;
-            this.lblLog.Location = new System.Drawing.Point(1118, 12);
+            this.lblLog.Location = new System.Drawing.Point(698, 6);
             this.lblLog.Name = "lblLog";
             this.lblLog.Size = new System.Drawing.Size(36, 20);
             this.lblLog.TabIndex = 9;
             this.lblLog.Text = "Log";
-            this.lblLog.Visible = false;
             // 
             // grpMatrixOperands
             // 
@@ -271,16 +279,6 @@
             this.lblUpdateMatrix.TabIndex = 11;
             this.lblUpdateMatrix.Text = "UpdateMatrix          ";
             this.lblUpdateMatrix.Visible = false;
-            // 
-            // btnMultiplyRow
-            // 
-            this.btnMultiplyRow.Location = new System.Drawing.Point(8, 66);
-            this.btnMultiplyRow.Name = "btnMultiplyRow";
-            this.btnMultiplyRow.Size = new System.Drawing.Size(142, 35);
-            this.btnMultiplyRow.TabIndex = 0;
-            this.btnMultiplyRow.Text = "Multiply Row";
-            this.btnMultiplyRow.UseVisualStyleBackColor = true;
-            this.btnMultiplyRow.Click += new System.EventHandler(this.btnAddRows_Click);
             // 
             // LinearMatrixGUI
             // 

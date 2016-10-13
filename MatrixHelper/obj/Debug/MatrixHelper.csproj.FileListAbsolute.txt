@@ -2,3 +2,7 @@ c:\users\taylor\documents\visual studio 2015\Projects\MatrixHelper\MatrixHelper\
 c:\users\taylor\documents\visual studio 2015\Projects\MatrixHelper\MatrixHelper\bin\Debug\MatrixHelper.pdb
 c:\users\taylor\documents\visual studio 2015\Projects\MatrixHelper\MatrixHelper\obj\Debug\MatrixHelper.dll
 c:\users\taylor\documents\visual studio 2015\Projects\MatrixHelper\MatrixHelper\obj\Debug\MatrixHelper.pdb
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelper\bin\Debug\MatrixHelper.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelper\bin\Debug\MatrixHelper.pdb
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelper\obj\Debug\MatrixHelper.dll
+C:\Users\Taylor\Documents\git\MatrixHelper\MatrixHelper\obj\Debug\MatrixHelper.pdb
