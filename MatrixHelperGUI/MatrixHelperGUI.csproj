@@ -33,6 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -52,6 +53,12 @@
     <Compile Include="CreateMatrixGUI.Designer.cs">
       <DependentUpon>CreateMatrixGUI.cs</DependentUpon>
     </Compile>
+    <Compile Include="GetDoubleGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetDoubleGUI.Designer.cs">
+      <DependentUpon>GetDoubleGUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="LinearMatrixGUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +69,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="CreateMatrixGUI.resx">
       <DependentUpon>CreateMatrixGUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetDoubleGUI.resx">
+      <DependentUpon>GetDoubleGUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LinearMatrixGUI.resx">
       <DependentUpon>LinearMatrixGUI.cs</DependentUpon>

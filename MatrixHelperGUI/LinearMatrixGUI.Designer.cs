@@ -106,7 +106,7 @@
             this.btnMultiplyRow.TabIndex = 0;
             this.btnMultiplyRow.Text = "Multiply Row";
             this.btnMultiplyRow.UseVisualStyleBackColor = true;
-            this.btnMultiplyRow.Click += new System.EventHandler(this.btnAddRows_Click);
+            this.btnMultiplyRow.Click += new System.EventHandler(this.btnMultiplyRow_Click);
             // 
             // btnAddRows
             // 
@@ -164,9 +164,11 @@
             this.chkAddMultiple.TabIndex = 5;
             this.chkAddMultiple.Text = "Add Multiple";
             this.chkAddMultiple.UseVisualStyleBackColor = true;
+            this.chkAddMultiple.CheckedChanged += new System.EventHandler(this.chkAddMultiple_CheckedChanged);
             // 
             // txtFactor
             // 
+            this.txtFactor.Enabled = false;
             this.txtFactor.Location = new System.Drawing.Point(206, 58);
             this.txtFactor.Name = "txtFactor";
             this.txtFactor.Size = new System.Drawing.Size(100, 26);

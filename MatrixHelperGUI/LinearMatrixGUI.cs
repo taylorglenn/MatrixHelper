@@ -103,21 +103,18 @@ namespace MatrixHelperGUI
         private void btnMultiplyRow_Click(object sender, EventArgs e)
         {
             double factor;
-            string factorText = txtFactor.Text.Replace('\\', '/'); //Just in case the wrong slash is used
-            if (factorText.Contains("/"))
+            using (var getDoubleForm = new GetDoubleGUI())
             {
-                double n = Convert.ToDouble(factorText.Substring(0, factorText.IndexOf('/')));
-                double d = Convert.ToDouble(factorText.Substring(factorText.IndexOf('/') + 1));
-                factor = n / d;
+                var result = getDoubleForm.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    factor = getDoubleForm.factor;
+                    _matrix.MultiplyRow(Convert.ToInt32(cboRow1.Text) - 1, factor);
+                    PushMatrixToStack(_matrix);
+                    UpdateLog("R" + cboRow1.Text + ": (" + factor + ")R" + cboRow1.Text);
+                    PrintMatrixToLabel(_matrix, lblMatrixDisplay);
+                }
             }
-            else
-            {
-                factor = Convert.ToDouble(factorText);
-            }
-            _matrix.MultiplyRow(Convert.ToInt32(cboRow1.Text) - 1, factor);
-            PushMatrixToStack(_matrix);
-            UpdateLog("R" + cboRow1.Text + ": " + factorText + "R" + cboRow1.Text);
-            PrintMatrixToLabel(_matrix, lblMatrixDisplay);
         }
         private void cboRow1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -149,6 +146,11 @@ namespace MatrixHelperGUI
             LinearMatrix stackMatrix = new LinearMatrix(lm._rows, lm._columns);
             stackMatrix.SetMatrix(lm.ToJaggedArray());
             _stack.Push(stackMatrix);
+        }
+
+        private void chkAddMultiple_CheckedChanged(object sender, EventArgs e)
+        {
+            txtFactor.Enabled = chkAddMultiple.Checked;
         }
     }
 }
