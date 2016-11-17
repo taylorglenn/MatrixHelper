@@ -124,6 +124,7 @@
             this.btnCreate.Name = "btnCreate";
             this.btnCreate.Size = new System.Drawing.Size(262, 35);
             this.btnCreate.TabIndex = 2;
+            this.btnCreate.TabStop = false;
             this.btnCreate.Text = "Create Matrix";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
@@ -135,6 +136,7 @@
             this.cboColumns.Name = "cboColumns";
             this.cboColumns.Size = new System.Drawing.Size(121, 28);
             this.cboColumns.TabIndex = 0;
+            this.cboColumns.TabStop = false;
             this.cboColumns.Text = "1";
             this.cboColumns.SelectedIndexChanged += new System.EventHandler(this.cboColumns_SelectedIndexChanged_1);
             // 
@@ -146,6 +148,7 @@
             this.cboRows.Name = "cboRows";
             this.cboRows.Size = new System.Drawing.Size(121, 28);
             this.cboRows.TabIndex = 1;
+            this.cboRows.TabStop = false;
             this.cboRows.Text = "1";
             this.cboRows.SelectedIndexChanged += new System.EventHandler(this.cboRows_SelectedIndexChanged_1);
             // 

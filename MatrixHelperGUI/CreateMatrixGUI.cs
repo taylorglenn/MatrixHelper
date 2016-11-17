@@ -46,6 +46,7 @@ namespace MatrixHelperGUI
             int columns;
             bool parseRows = Int32.TryParse(cboRows.Text.ToString(), out rows);
             bool parseCols = Int32.TryParse(cboColumns.Text.ToString(), out columns);
+            int tabIndex = 1;
             for (int r = 1; r <= rows; r++)
             {
                 for (int c = 1; c <= columns; c++)
@@ -54,6 +55,8 @@ namespace MatrixHelperGUI
                     if (tb != null)
                     {
                         tb.Visible = true;
+                        tb.TabIndex = tabIndex;
+                        tabIndex++;
                         if (tb.Text == "") //This way it won't overwrite any values if you just want to resize
                         {
                             tb.Text = "0";
